@@ -666,10 +666,10 @@ func (e *Effect) Options(args ...interface{}) int {
 	if len(args) == 0 {
 		return int(C.sox_effect_options(e.cEffect, 0, nil))
 	}
-	if len(args) > 10 {
+	if len(args) > 15 {
 		panic("Too many arguments to sox.Effect.Options()")
 	}
-	var cargs [10](*C.char)
+	var cargs [15](*C.char)
 	n := len(args)
 	for i, v := range args {
 		switch v := v.(type) {
